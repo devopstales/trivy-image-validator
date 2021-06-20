@@ -1,0 +1,23 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: trivy-scanner
+webhooks:
+  - name: trivy-scanner.devopstales.intra
+    sideEffects: "None"
+    admissionReviewVersions: [v1beta1, v1]
+    clientConfig:
+      service:
+        name: trivy-scanner
+        namespace: validation
+        path: "/validate"
+      caBundle: "${CA_BUNDLE}"
+    rules:
+      - apiGroups: ["apps", ""]
+        resources:
+          - "deployments"
+          - "pods"
+        apiVersions:
+          - "*"
+        operations:
+          - CREATE
