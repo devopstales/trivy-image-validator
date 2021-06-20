@@ -4,7 +4,7 @@ Trivy Image Validator automatically detect security issues and block before a Ku
 
 This repository contains an admission controller that can be configured as a ValidatingWebhook in a k8s cluster. Kubernetes will send requests to the admission server when a Pod creation is initiated. The admission controller checks the image using trivy.
 
-Inspirated by @knqyf263 and his wok on trivy-enforcer.
+Inspirated by knqyf263 and his wok on trivy-enforcer.
 
 ### Deploy
 ```yaml
