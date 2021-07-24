@@ -11,4 +11,3 @@ docker build -t $1 \
 rm -f deploy/docker/trivy-scanner.py
 rm -f deploy/docker/trivy
 rm -f deploy/docker/requirements.txt
-rm -f certs/server.pem

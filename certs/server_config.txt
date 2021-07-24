@@ -13,3 +13,7 @@ commonName                  = Admission Controller Webhook
 subjectAltName = @alt_names
 [alt_names]
 DNS.1   = trivy-scanner.validation.svc
+DNS.2   = trivy-scanner.kube-system.scv
+DNS.3   = trivy-image-validator.validation.svc
+DNS.4   = trivy-image-validator.kube-system.scv
+DNS.5   = trivy-image-validator.trivy-image-validator.svc
