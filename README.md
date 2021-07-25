@@ -15,6 +15,14 @@ kubectl apply -f deploy/kubernetes/trivy-scanner.yaml
 kubectl apply -f deploy/kubernetes/vwc.yaml
 kubectl apply -f deploy/kubernetes/test-deploy.yaml
 ```
+OR
+```
+helm repo add devopstales https://devopstales.github.io/helm-charts
+helm upgrade --install trivy-image-validator devopstales/trivy-image-validator \
+--namespace trivy-image-validator \
+--create-namespace
+```
+
 
 ### Example Deploy:
 You can define policy, by adding annotation to the pod trough the deployment:

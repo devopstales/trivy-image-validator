@@ -13,11 +13,13 @@ RUN apk add --no-cache git && \
     chown -R kube-trivy-admission:kube-trivy-admission /var/run/shell-operator
 
 COPY trivy /usr/local/bin
-COPY server.pem /app
-COPY trivy-scanner.py /app
+COPY tls.pem /app
+COPY tls.key /app
+COPY tls.crt /app
+COPY trivy-image-validator.py /app
 
 USER 10001:10001
 
 FROM base as prod
 ENTRYPOINT [ "python3" ]
-CMD [ "trivy-scanner.py" ]
+CMD [ "trivy-image-validator.py" ]

@@ -1,14 +1,14 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
-  name: trivy-scanner
+  name: trivy-image-validating-webhook-cfg
 webhooks:
-  - name: trivy-scanner.devopstales.intra
+  - name: trivy-image-validator.devopstales.intra
     sideEffects: "None"
     admissionReviewVersions: [v1beta1, v1]
     clientConfig:
       service:
-        name: trivy-scanner
+        name: trivy-image-validator
         namespace: validation
         path: "/validate"
       caBundle: "${CA_BUNDLE}"
