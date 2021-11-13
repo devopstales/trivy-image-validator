@@ -11,7 +11,7 @@ Inspirated by knqyf263 and his wok on trivy-enforcer.
 kubectl create ns validation
 kubens validation
 
-kubectl apply -f deploy/kubernetes/trivy-scanner.yaml
+kubectl apply -f deploy/kubernetes/trivy-image-validator.yaml
 kubectl apply -f deploy/kubernetes/vwc.yaml
 kubectl apply -f deploy/kubernetes/test-deploy.yaml
 ```
@@ -47,7 +47,7 @@ spec:
 kubectl create ns validation
 kubens validation
 
-kubectl apply -f deploy/kubernetes/trivy-scanner.yaml
+kubectl apply -f deploy/kubernetes/trivy-image-validator.yaml
 kubectl apply -f deploy/kubernetes/vwc.yaml
 kubectl apply -f deploy/kubernetes/test-deploy.yaml
 ```
