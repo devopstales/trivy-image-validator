@@ -1,3 +1,6 @@
+|![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/156px-Warning.svg.png) | This project is no longer supported.
+|---|---|
+
 # Trivy image validator
 
 Trivy Image Validator automatically detect security issues and block before a Kubernetes pod starts.
@@ -5,6 +8,11 @@ Trivy Image Validator automatically detect security issues and block before a Ku
 This repository contains an admission controller that can be configured as a ValidatingWebhook in a k8s cluster. Kubernetes will send requests to the admission server when a Pod creation is initiated. The admission controller checks the image using trivy.
 
 Inspirated by knqyf263 and his wok on trivy-enforcer.
+
+
+## :warning: Deprecation and Archive Notice
+
+This chart is Deprecated and do not maintained eny more. Use [trivy-operator](https://github.com/devopstales/trivy-operator) instead.
 
 ### Deploy
 ```yaml
